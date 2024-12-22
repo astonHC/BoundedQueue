@@ -1,8 +1,7 @@
 # BoundedQueue
 A lightweight implementation of BoundedQueue as per a Case Study (CS2_DSA)
 
-![image](https://github.com/user-attachments/assets/b44535fe-159e-4547-8536-fa870b56dd6d)
-
+![image](https://github.com/user-attachments/assets/c23efeed-2d74-44d3-9e40-e61331a9ed7e)
 
 ## Example:
 
