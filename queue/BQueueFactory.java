@@ -64,7 +64,7 @@ public class BQueueFactory<T> implements BQueue<T>
     @Override
     public boolean IS_OOB(T VAR)
     {
-        if((int)VAR > 10)
+        if((int)VAR > BOUNDARY)
         {
             System.out.println("Boundary exceeded");
             return true;
