@@ -66,7 +66,8 @@ public class BQueueFactory<T> implements BQueue<T>
     {
         if((int)VAR > BOUNDARY)
         {
-            System.out.println("Boundary exceeded");
+            System.err.println("Boundary exceeded");
+            System.exit(0);
             return true;
         }
         
