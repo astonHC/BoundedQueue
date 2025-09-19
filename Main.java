@@ -20,7 +20,7 @@ public class Main
 
         // THROW AN OOB IN CASE THE ELEMENT HAS EXCEEDED
 
-        BOUNDED.IS_OOB(11);
+        BOUNDED.ADD(11);
 
         System.out.println(BOUNDED);
     }
