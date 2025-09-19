@@ -6,16 +6,19 @@ A lightweight implementation of BoundedQueue as per a Case Study (CS2_DSA)
 ## Example:
 
 ```java
+// DEFINE A CONSTANT FOR THE BOUNDS IN QUESTION
+public static final int BOUNDARY = 10;
+
 public static void main(String[] args) 
 {
-  BOUNDED.ADD(1);
-  BOUNDED.ADD(10);
+    BOUNDED.ADD(1);
+    BOUNDED.ADD(10);
 
-  // THROW AN OOB IN CASE THE ELEMENT HAS EXCEEDED
+    // THROW AN OOB IN CASE THE ELEMENT HAS EXCEEDED
 
-  BOUNDED.IS_OOB(11);
+    BOUNDED.ADD(11);
 
-  System.out.println(BOUNDED);
+    System.out.println(BOUNDED);
 }
 ```
 
