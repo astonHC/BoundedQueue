@@ -1,8 +1,6 @@
 # BoundedQueue
 A lightweight implementation of BoundedQueue as per a Case Study (CS2_DSA)
 
-![image](https://github.com/user-attachments/assets/c23efeed-2d74-44d3-9e40-e61331a9ed7e)
-
 ## Example:
 
 ```java
@@ -21,6 +19,11 @@ public static void main(String[] args)
     System.out.println(BOUNDED);
 }
 ```
+
+## Output:
+
+<img width="1033" height="212" alt="image" src="https://github.com/user-attachments/assets/ced9f9f9-dcc1-4b31-8026-1ff7e9746b9b" />
+
 
 # Building:
 
