@@ -18,11 +18,25 @@ public class BQueueFactory<T> implements BQueue<T>
         this.BOUNDARY = CAP;
     }
 
+    // ADD'S A CORRESPONDING ELEMENT TO THE BACK OF THE QUEUE
+    // CHECKS FOR BOUNDARYS BASED ON A PRE-DEFINED NUMBER OF ELEMENTS
+    // RETURNS: A BOOLEAN TYPE WHICH IS EXPRESSED BY THE ACCESS METHOD
+    // OF ADD FROM THE QUEUE 
+
     @Override
     public boolean ADD(T VAR)
     {
+        if(IS_OOB(VAR))
+        {
+            System.err.println("BOUNDARY EXCEEDED BY VALUE(S): " + VAR);
+            return false;
+        }
+
         return QUEUE.add(VAR);
     }
+
+    // PUT A VALUE IN PLACE AT THE BACK OF THE QUEUE
+    // IF THE QUEUE IS FULL
 
     @Override
     public void PUT(T VAR) 
@@ -37,11 +51,17 @@ public class BQueueFactory<T> implements BQueue<T>
         }
     }
 
+    // REMOVES A CORRESPONDING ELEMENT FROM THE FRONT OF THE QUUEUE
+    // RETURNS: THE ACCESS METHOD OF REMOVE FROM THE QUEUE
+
     @Override
     public T REMOVE()
     {
         return QUEUE.remove();
     }
+
+    // RETRIEVES AND REMOVES THE HEAD OF THE QUEUE
+    // RETURNS THE HEAD OF THE QUEUE
 
     @Override
     public T POLL()
@@ -49,11 +69,17 @@ public class BQueueFactory<T> implements BQueue<T>
         return QUEUE.poll();
     }
 
+    // RETRIEVES BUT DOES NOT REMOVE THE HEAD OF THE QUEUE
+    // RETURNS THE HEAD OF THE QUEUE
+
     @Override
     public T PEEK()
     {
         return QUEUE.peek();
     }
+
+    // CHECKS IF THE QUEUE CONTAINS A SPECIFIC ELEMENT
+    // RETURNS: TRUE IF THE QUEUE CONTAINS THE ELEMENT
 
     @Override
     public boolean CONTAINS(T TYPE)
@@ -61,17 +87,14 @@ public class BQueueFactory<T> implements BQueue<T>
         return QUEUE.contains(TYPE);
     }
 
+    // CHECKS IF THE GIVEN ELEMENT EXCEEDS THE BOUNDARY LIMIT OR IF THE QUEUE IS FULL
+    // RETURNS: TRUE IF THE ELEMENT EXCEEDS BOUNDARY
+
     @Override
     public boolean IS_OOB(T VAR)
     {
-        if((int)VAR > BOUNDARY)
-        {
-            System.err.println("Boundary exceeded");
-            System.exit(0);
-            return true;
-        }
-        
-        return false;
+        if (VAR instanceof Number && ((Number) VAR).intValue() > BOUNDARY) { return true; }
+        return QUEUE.size() >= BOUNDARY;
     }
 
     @Override
