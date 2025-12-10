@@ -11,11 +11,11 @@ import java.util.LinkedList;
 public class BQueueFactory<T> implements BQueue<T> 
 {
     private final LinkedList<T> QUEUE = new LinkedList<>();
-    private int BOUNDARY = 10;
+    private final int CAPACITY;
 
     public BQueueFactory(int CAP) 
     {
-        this.BOUNDARY = CAP;
+        this.CAPACITY = CAP;
     }
 
     // ADD'S A CORRESPONDING ELEMENT TO THE BACK OF THE QUEUE
@@ -93,8 +93,8 @@ public class BQueueFactory<T> implements BQueue<T>
     @Override
     public boolean IS_OOB(T VAR)
     {
-        if (VAR instanceof Number && ((Number) VAR).intValue() > BOUNDARY) { return true; }
-        return QUEUE.size() >= BOUNDARY;
+        if (VAR instanceof Number && ((Number) VAR).intValue() > CAPACITY) { return true; }
+        return QUEUE.size() >= CAPACITY;
     }
 
     @Override
