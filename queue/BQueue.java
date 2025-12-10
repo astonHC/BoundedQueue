@@ -8,6 +8,8 @@ package queue;
 
 public interface BQueue<T>
 {
+    final int BOUNDARY = 10;
+
     boolean ADD(T VAR);
 
     void PUT(T VAR);
