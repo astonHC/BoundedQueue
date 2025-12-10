@@ -5,12 +5,11 @@ import queue.*;
 
 public class Main 
 {
-    private static BQueue<Integer> BOUNDED;
-    public static int BOUNDARY = 10;
+    public static BQueue<Integer> BOUNDED;
 
-    static 
+    static
     {
-        BOUNDED = new BQueueFactory<>(BOUNDARY); 
+        BOUNDED = new BQueueFactory<>(BQueue.BOUNDARY);
     }
 
     public static void main(String[] args) 
